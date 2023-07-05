@@ -2,6 +2,6 @@
 
 <figure class = "third">
    Dataset storage architecture
-<img src = "https://github.com/ISSR-CBNU/Personality-trait-prediction/blob/main/Dataset/datastore.png" width = "400" height="300"/>
+<img src = "https://github.com/ISSR-CBNU/Personality-trait-prediction/blob/main/Dataset/datastore.png" width = "950" height="500"/>
 
 </figure>
