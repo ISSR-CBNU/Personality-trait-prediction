@@ -18,6 +18,106 @@ import logging
 
 import torch.distributed as dist
 
+
+import torch.hub
+import torch.nn as nn
+
+from torchvision.models.video.resnet import VideoResNet, BasicBlock, R2Plus1dStem, Conv2Plus1D
+
+
+model_urls = {
+    "r2plus1d_34_8_ig65m": "https://github.com/moabitcoin/ig65m-pytorch/releases/download/v1.0.0/r2plus1d_34_clip8_ig65m_from_scratch-9bae36ae.pth",           # noqa: E501
+    "r2plus1d_34_32_ig65m": "https://github.com/moabitcoin/ig65m-pytorch/releases/download/v1.0.0/r2plus1d_34_clip32_ig65m_from_scratch-449a7af9.pth",         # noqa: E501
+    "r2plus1d_34_8_kinetics": "https://github.com/moabitcoin/ig65m-pytorch/releases/download/v1.0.0/r2plus1d_34_clip8_ft_kinetics_from_ig65m-0aa0550b.pth",    # noqa: E501
+    "r2plus1d_34_32_kinetics": "https://github.com/moabitcoin/ig65m-pytorch/releases/download/v1.0.0/r2plus1d_34_clip32_ft_kinetics_from_ig65m-ade133f1.pth",  # noqa: E501
+}
+
+def r2plus1d_34_32_ig65m(num_classes, pretrained=True, progress=False):
+    """R(2+1)D 34-layer IG65M model for clips of length 32 frames.
+
+    Args:
+      num_classes: Number of classes in last classification layer
+      pretrained: If True, loads weights pretrained on 65 million Instagram videos
+      progress: If True, displays a progress bar of the download to stderr
+    """
+    assert not pretrained or num_classes == 359, "pretrained on 359 classes"
+    return r2plus1d_34(num_classes=num_classes, arch="r2plus1d_34_32_ig65m",
+                       pretrained=pretrained, progress=progress)
+    
+    
+    
+def r2plus1d_34(num_classes, pretrained=True, progress=False, arch=None):
+    model = VideoResNet(block=BasicBlock,                       # VideoResNet 수정
+                        conv_makers=[Conv2Plus1D] * 4,
+                        layers=[3, 4, 6, 3],
+                        stem=R2Plus1dStem)
+
+    model.fc = nn.Linear(model.fc.in_features, out_features=num_classes)
+
+    # Fix difference in PyTorch vs Caffe2 architecture
+    # https://github.com/facebookresearch/VMZ/issues/89
+    # https://github.com/pytorch/vision/issues/1265
+    model.layer2[0].conv2[0] = Conv2Plus1D(128, 128, 288)
+    model.layer3[0].conv2[0] = Conv2Plus1D(256, 256, 576)
+    model.layer4[0].conv2[0] = Conv2Plus1D(512, 512, 1152)
+
+    # We need exact Caffe2 momentum for BatchNorm scaling
+    for m in model.modules():
+        if isinstance(m, nn.BatchNorm3d):
+            m.eps = 1e-3
+            m.momentum = 0.9
+
+    if pretrained:
+        state_dict = torch.hub.load_state_dict_from_url(model_urls[arch],
+                                                        progress=progress)
+        model.load_state_dict(state_dict)
+
+    return model
+
+class R2plus1d_backbone(nn.Module):
+    
+    def __init__(self):
+        super().__init__()
+        self.model = r2plus1d_34_32_ig65m(num_classes=359, pretrained=True, progress=True)
+        
+        
+    def forward(self,x):
+        # print(x.shape) # (batch_size) (channel) (frame) (height) (width)
+        B, C, D, H, W = x.shape
+        
+        # ---------- 2D Patch Partition ---------- #
+        output_1 = []
+        for i in range(B):
+            temp = x[i].unfold(2,int((H/2)),int((W/2))).unfold(3,int((H/2)),int((W/2)))
+            temp = rearrange(temp, 'c d h1 w1 h w -> (h1 w1) c d h w')
+            output_1.append(temp)
+                                                                                                # ex) batch_size = 8, frame = 15, height = 128, width = 128, channel = 3
+        output_1 = torch.stack(output_1,0)                                                      # 8, 4, 3, 15, 64, 64
+        output_1 = rearrange(output_1, 'b n c d h w ->n b c d h w')                             # 4, 8, 3, 15, 64, 64
+        
+        # ---------- R(2+1)D Backbone ---------- #
+        out_1 = self.model(output_1[0])                                                         # 8, 256, 4, 8, 8
+        out_2 = self.model(output_1[1])                                                         # 8, 256, 4, 8, 8
+        out_3 = self.model(output_1[2])                                                         # 8, 256, 4, 8, 8
+        out_4 = self.model(output_1[3])                                                         # 8, 256, 4, 8, 8
+        
+        # -------------- Reshape -------------- #
+        new_out_1 = torch.cat([out_1,out_2],dim=3)                                              # 8, 256, 4, 16, 8
+        new_out_2 = torch.cat([out_3,out_4],dim=3)                                              # 8, 256, 4, 16, 8
+        
+        new_out_last = torch.cat([new_out_1,new_out_2],dim=4)                                   # 8, 256, 4, 16, 16
+        
+        
+        # ------ w/o 2D Patch Partition ------ #
+        # out = self.model(x)
+        # return out
+        
+        
+        return new_out_last
+    
+    
+    
+
 logger_initialized = {}
 
 def get_logger(name, log_file=None, log_level=logging.INFO, file_mode='w'):
@@ -501,7 +601,7 @@ class PatchEmbed3D(nn.Module):
         embed_dim (int): Number of linear projection output channels. Default: 96.
         norm_layer (nn.Module, optional): Normalization layer. Default: None
     """
-    def __init__(self, patch_size=(2,4,4), in_chans=3, embed_dim=192, norm_layer=None):
+    def __init__(self, patch_size=(2,4,4), in_chans=256, embed_dim=192, norm_layer=None):
         super().__init__()
         self.patch_size = patch_size
 
@@ -565,7 +665,7 @@ class SwinTransformer3D(nn.Module):
                  pretrained=None,
                  pretrained2d=True,
                  patch_size=(4,4,4),
-                 in_chans=3,
+                 in_chans=256,
                  embed_dim=192,
                  depths=[2, 2, 6, 2],
                  num_heads=[3, 6, 12, 24],
@@ -590,8 +690,9 @@ class SwinTransformer3D(nn.Module):
         self.frozen_stages = frozen_stages
         self.window_size = window_size
         self.patch_size = patch_size
-
-
+        
+        
+        self.r2plus1d_backbone = R2plus1d_backbone()
 
         # split image into non-overlapping patches
         self.patch_embed = PatchEmbed3D(
@@ -739,11 +840,17 @@ class SwinTransformer3D(nn.Module):
         """Forward function."""
         B, C, D, H, W = x.size() # B(batch_size), C(Channel), D(Dimension,Frame), H(Height), W(Width) 값 받아오기 위해 추가
         
-        x = self.patch_embed(x)
+        # x = self.PatchPartiton2D(x) # 2D Patch Partition
+        
+        x = self.r2plus1d_backbone(x) # R(2+1)D Backbone
+        
+        # x = self.backbone_reshape(x) # Reshape
+        
+        x = self.patch_embed(x) # 3D Patch Partition + Linear Embedding
         
         x = self.pos_drop(x)
 
-        for layer in self.layers:
+        for layer in self.layers: # Video Swin Transformer
             x = layer(x.contiguous())
 
         x = rearrange(x, 'n c d h w -> n d h w c')
