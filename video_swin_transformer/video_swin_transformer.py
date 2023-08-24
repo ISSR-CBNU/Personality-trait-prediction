@@ -838,13 +838,10 @@ class SwinTransformer3D(nn.Module):
 
     def forward(self, x):
         """Forward function."""
-        B, C, D, H, W = x.size() # B(batch_size), C(Channel), D(Dimension,Frame), H(Height), W(Width) 값 받아오기 위해 추가
+        B, C, D, H, W = x.size() # B(batch_size), C(Channel), D(Dimension,Frame), H(Height), W(Width)
         
-        # x = self.PatchPartiton2D(x) # 2D Patch Partition
         
-        x = self.r2plus1d_backbone(x) # R(2+1)D Backbone
-        
-        # x = self.backbone_reshape(x) # Reshape
+        x = self.r2plus1d_backbone(x) # 2D Patch Partition + R(2+1)D Backbone + Reshape
         
         x = self.patch_embed(x) # 3D Patch Partition + Linear Embedding
         
@@ -859,7 +856,7 @@ class SwinTransformer3D(nn.Module):
 
         x = self.adaptive_pool(x) # batch size, channel, 1, 1, 1
         
-        x = x.contiguous().view(B,int(self.embed_dim * 2**(self.num_layers))) # >> B C D(1) H(1) W(1) -> B C
+        x = x.contiguous().view(B,int(self.embed_dim * 2**(self.num_layers))) # >> B C D(1) H(1) W(1) -> B C // squeeze() 로 바꿀 수 있음
 
         output = self.custom_layer_1(x)
         output = self.custom_layer_2(output)
