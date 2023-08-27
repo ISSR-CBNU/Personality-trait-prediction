@@ -16,4 +16,3 @@
 ||0.9095|Face|
 |With.R(2+1)D Backbone, 2D Patch Partition|0.9127|Full-Shot|
 ||0.9127|Face|
-|
