@@ -1,16 +1,20 @@
 # Personality-trait-prediction
 
 ## Performance Table
+
+#### CNN
 |Model|1 - MAE|Input Data|
 |---|---|---|
-|<span style="color:green">CNN</span>||
 |VGG16|0.8819|Full-Shot|
 |ResNet-101|0.8836|Full-Shot|
 |InCeption V2|0.8831|Full-Shot|
 |Vgg16-LSTM|0.8824|Full-Shot|
 |ResNet101-LSTM|0.8826|Full-Shot|
 |InCeption V2-LSTM|0.8831|Full-Shot|
-|<span style="color:green">VIT</Span>|---|---|
+
+#### VIT
+|Model|1-MAE|Input Data|
+|---|---|---|
 |Video Swin Transformer|0.8980|Full-Shot|
 ||0.9005|Face|
 |**With.R(2+1)D Backbone**|**0.9136**|**Full-Shot**|
