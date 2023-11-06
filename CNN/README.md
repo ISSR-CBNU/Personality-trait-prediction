@@ -1,3 +1,3 @@
 CNN
 # test
-    qx
+    qx.
