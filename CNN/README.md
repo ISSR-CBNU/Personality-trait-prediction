@@ -1,3 +1,1 @@
 CNN
-# test
-    qx.
