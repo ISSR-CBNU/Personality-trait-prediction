@@ -213,10 +213,10 @@ class VideoResNet(nn.Module):
         self.layer1 = self._make_layer(block, conv_makers[0], 64, layers[0], stride=1)
         self.layer2 = self._make_layer(block, conv_makers[1], 128, layers[1], stride=2)
         self.layer3 = self._make_layer(block, conv_makers[2], 256, layers[2], stride=2)
-        self.layer4 = self._make_layer(block, conv_makers[3], 512, layers[3], stride=2)
+        # self.layer4 = self._make_layer(block, conv_makers[3], 512, layers[3], stride=2)
 
-        self.avgpool = nn.AdaptiveAvgPool3d((1, 1, 1))
-        self.fc = nn.Linear(512 * block.expansion, num_classes)
+        # self.avgpool = nn.AdaptiveAvgPool3d((1, 1, 1))
+        # self.fc = nn.Linear(512 * block.expansion, num_classes)
 
         # init weights
         self._initialize_weights()
@@ -227,32 +227,11 @@ class VideoResNet(nn.Module):
                     nn.init.constant_(m.bn3.weight, 0)
 
     def forward(self, x):
-        # B,CO,C,D,H,W=x.size()
-        # print("B",B)
-        # print("CO",CO)
-        # print("C",C)
-        # print("D",D)
-        # print("H",H)
-        # print("W",W)
-        # x = x.view(B*CO,C,D,H,W)
         x = self.stem(x)
 
         x = self.layer1(x)
-        # print("layer1",x.shape)
         x = self.layer2(x)
-        # print("layer2",x.shape)
         x = self.layer3(x)
-        # print("layer3",x.shape)
-        # x = self.layer4(x)
-        # print("layer4",x.shape)
-
-        # x = self.avgpool(x)
-        # print("avgpool",x.shape)
-        # # Flatten the layer to fc
-        # x = x.flatten(1)
-        # print("flatten",x.shape)
-        # x = self.fc(x)
-        # print("fc",x.shape)
 
         return x
 
@@ -297,7 +276,7 @@ def _video_resnet(arch, pretrained=True, progress=True, **kwargs):
         print('R2plus1d_pretrained_model')
         state_dict = load_state_dict_from_url(model_urls[arch],
                                               progress=progress)
-        model.load_state_dict(state_dict)
+        model.load_state_dict(state_dict, strict = False)
     return model
 
 
