@@ -101,7 +101,42 @@ def get_root_logger(log_file=None, log_level=logging.INFO):
     """
     return get_logger(__name__.split('.')[0], log_file, log_level)
     
+# 2D Patch Partition + R(2+1)D Backbone + Reshape
+class R2plus1d_backbone(nn.Module):
+    
+    def __init__(self):
+        super().__init__()
+        self.model = r2plus1d_18()
+        
+    def forward(self, x):
+        B, C, D, H, W = x.shape
+        
+        # ---------- 2D Patch Partition ---------- #
+        output_1 = []
+        for i in range(B):
+            temp = x[i].unfold(2,int((H/2)),int((W/2))).unfold(3,int((H/2)),int((W/2)))
+            temp = rearrange(temp, 'c d h1 w1 h w -> (h1 w1) c d h w')
+            output_1.append(temp)
+                                                                                                # ex) batch_size = 8, frame = 15, height = 128, width = 128, channel = 3
+        output_1 = torch.stack(output_1,0)                                                      # 8, 4, 3, 15, 64, 64
+        output_1 = rearrange(output_1, 'b n c d h w -> n b c d h w')                            # 4, 8, 3, 15, 64, 64
+        
+        # # ---------- R(2+1)D Backbone ---------- #
+        out_1 = self.model(output_1[0])                                                         # 8, 256, 4, 8, 8
+        out_2 = self.model(output_1[1])                                                         # 8, 256, 4, 8, 8
+        out_3 = self.model(output_1[2])                                                         # 8, 256, 4, 8, 8
+        out_4 = self.model(output_1[3])                                                         # 8, 256, 4, 8, 8
+        
+        # # -------------- Reshape -------------- #
+        new_out_1 = torch.cat([out_1,out_2],dim=4)                                              # 8, 256, 4, 8, 16
+        new_out_2 = torch.cat([out_3,out_4],dim=4)                                              # 8, 256, 4, 8, 16
 
+        new_out_last = torch.cat([new_out_1,new_out_2],dim=3)                                   # 8, 256, 4, 16, 16
+        
+        new_out_last = self.model(x)
+        return new_out_last
+    
+    
 class Mlp(nn.Module):
     """ Multilayer perceptron."""
 
@@ -530,10 +565,8 @@ class PatchEmbed3D(nn.Module):
             D, Wh, Ww = x.size(2), x.size(3), x.size(4)
             x = x.flatten(2).transpose(1, 2)
             
-            # print('self.norm 지나기 전' , x.shape)
-            
             x = self.norm(x)
-            # print('self.norm 지난 후 ', x.shape)
+
             x = x.transpose(1, 2).view(-1, self.embed_dim, D, Wh, Ww)
 
         return x
@@ -592,9 +625,10 @@ class SwinTransformer3D(nn.Module):
         self.frozen_stages = frozen_stages
         self.window_size = window_size
         self.patch_size = patch_size
-
         
-        self.r2plus1d_18=r2plus1d_18()
+        
+        self.r2plus1d_backbone = R2plus1d_backbone()
+        
         # split image into non-overlapping patches
         self.patch_embed3d = PatchEmbed3D(
             patch_size=patch_size, in_chans=in_chans, embed_dim=embed_dim,
@@ -633,12 +667,12 @@ class SwinTransformer3D(nn.Module):
 
         # 이 부분은 Custom입니다.
         self.adaptive_pool = nn.AdaptiveAvgPool3d((1,1,1))
-        self.custom_layer_1 = nn.Linear(self.num_features, 512)
-        self.custom_layer_2 = nn.Linear(512,256)
-        self.custom_layer_3 = nn.Linear(256,128)
-        self.custom_layer_4 = nn.Linear(128, 64)
-        self.custom_layer_5 = nn.Linear(64,32)
-        self.custom_layer_6 = nn.Linear(32,5)
+        self.custom_layer_1 = nn.Linear(self.num_features, 5)
+        # self.custom_layer_2 = nn.Linear(512,256)
+        # self.custom_layer_3 = nn.Linear(256,128)
+        # self.custom_layer_4 = nn.Linear(128, 64)
+        # self.custom_layer_5 = nn.Linear(64,32)
+        # self.custom_layer_6 = nn.Linear(32,5)
         # 이 부분까지 Custom 입니다.
         
         self._freeze_stages()
@@ -745,8 +779,9 @@ class SwinTransformer3D(nn.Module):
         """Forward function."""
 
         B, C, D, H, W = x.size()
-
-        x = self.r2plus1d_18(x)
+                
+        x = self.r2plus1d_backbone(x)
+                
         x = self.patch_embed3d(x)
         
         x = self.pos_drop(x)
@@ -761,11 +796,11 @@ class SwinTransformer3D(nn.Module):
         x = x.contiguous().view(B,int(self.embed_dim * 2**(self.num_layers)))
         
         output = self.custom_layer_1(x)
-        output = self.custom_layer_2(output)
-        output = self.custom_layer_3(output)
-        output = self.custom_layer_4(output)
-        output = self.custom_layer_5(output)
-        output = self.custom_layer_6(output)
+        # output = self.custom_layer_2(output)
+        # output = self.custom_layer_3(output)
+        # output = self.custom_layer_4(output)
+        # output = self.custom_layer_5(output)
+        # output = self.custom_layer_6(output)
         
         return output
 

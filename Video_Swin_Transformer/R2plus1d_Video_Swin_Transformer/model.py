@@ -100,7 +100,6 @@ def get_root_logger(log_file=None, log_level=logging.INFO):
         :obj:`logging.Logger`: The root logger.
     """
     return get_logger(__name__.split('.')[0], log_file, log_level)
-    
 
 class Mlp(nn.Module):
     """ Multilayer perceptron."""
@@ -745,8 +744,9 @@ class SwinTransformer3D(nn.Module):
         """Forward function."""
 
         B, C, D, H, W = x.size()
-
+                
         x = self.r2plus1d_18(x)
+        
         x = self.patch_embed3d(x)
         
         x = self.pos_drop(x)
