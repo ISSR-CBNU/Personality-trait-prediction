@@ -115,33 +115,37 @@ class HumanSeg(nn.Module):
         super().__init__()
         self.model = AutoModelForSemanticSegmentation.from_pretrained("mattmdjaga/segformer_b2_clothes")
 
+        self.model.eval()
+        for param in self.model.parameters():
+            param.requires_grad = False
+
     def forward(self,x):
-        with torch.no_grad():
-            B, C, D, H, W = x.shape
+        
+        B, C, D, H, W = x.shape
+        
+        image_data = rearrange(x, 'b c d h w -> b d c h w')
+        
+        B_1, D_1, C_1, H_1, W_1 = image_data.shape
+        out_list2 = []
+        
+        for i in range(B_1):
+            out_list = []
+            for j in range(D_1):
+                temp = self.model(image_data[i][j].unsqueeze(0)).logits.argmax(dim=1)[0]
+                temp = torch.where(temp == 0, 1.0, 0.0)
+                out_list.append(temp)
+            output = torch.stack(out_list, 0)
+            output = output.unsqueeze(dim=0)
+            out_list2.append(output)
             
-            image_data = rearrange(x, 'b c d h w -> b d c h w')
-            
-            B_1, D_1, C_1, H_1, W_1 = image_data.shape
-            out_list2 = []
-            for i in range(B_1):
-                out_list = []
-                for j in range(D_1):
-                    temp = self.model(image_data[i][j].unsqueeze(0)).logits.argmax(dim=1)[0]
-                    temp = torch.where(temp == 0, 1.0, 0.0)
-                    out_list.append(temp)
-                output = torch.stack(out_list, 0)
-                output = output.unsqueeze(dim=0)
-                out_list2.append(output)
-                
-                del out_list, temp
-                gc.collect()
-                
-            out_list2 = torch.stack(out_list2, 0)
-            
-            del output
+            del out_list, temp
             gc.collect()
+            
+        out_list2 = torch.stack(out_list2, 0)
+        
+        del output
+        gc.collect()
         return x, out_list2
-    
 
 # -- Video_swin_transformer -- #
 class Mlp(nn.Module):
@@ -222,28 +226,25 @@ def get_window_size(x_size, window_size, shift_size=None): # x_size = D,H,W / wi
     else:
         return tuple(use_window_size), tuple(use_shift_size)
     
-    
+
 class ForcedLinear(nn.Module):
     def __init__(self, input_features, output_features):
         super(ForcedLinear, self).__init__()
         self.weight = nn.Parameter(torch.randn(output_features, input_features))
         self.bias = nn.Parameter(torch.randn(output_features))
-
+        
     def forward(self, x, y):
         batch_size, length, input_size = x.size()
-        output = torch.zeros(batch_size, length, self.bias.size(0), dtype=x.dtype, device=x.device)
-        for i in range(batch_size):
-            for j in range(length):
-                input_data = x[i, j, :]
-                if y[i, j] == 0:
-                    output[i, j, :] = torch.matmul(input_data, self.weight) + self.bias
-                else:
-                    output[i, j, :] = torch.matmul(input_data, self.weight)
-        del input_data
+
+        mask = y.unsqueeze(2).expand(batch_size, length, self.bias.size(0))
+        
+        weighted_input = torch.matmul(x, self.weight.t())
+
+        output = weighted_input + self.bias * (1 - mask)
+
         return output
     
-        
-# -- Forced Attention 은 여기서 수정해야 하는걸로 보임. -- #
+    
 class WindowAttention3D(nn.Module):
     """ Window based multi-head self attention (W-MSA) module with relative position bias.
     It supports both of shifted and non-shifted window.
@@ -302,6 +303,7 @@ class WindowAttention3D(nn.Module):
             mask: (0/-inf) mask with shape of (num_windows, N, N) or None
         """
         B_, N, C = x.shape
+
         qkv = self.qkv(x).reshape(B_, N, 3, self.num_heads, C // self.num_heads).permute(2, 0, 3, 1, 4)
         q, k, v = qkv[0], qkv[1], qkv[2]  # B_, nH, N, C
         
@@ -402,6 +404,7 @@ class SwinTransformerBlock3D(nn.Module):
         # partition windows
         x_windows = window_partition(shifted_x, window_size)  # B*nW, Wd*Wh*Ww, C
         y_windows = window_partition_Y(y, window_size)
+        
         # W-MSA/SW-MSA
         attn_windows = self.attn(x_windows, y_windows, mask=attn_mask)  # B*nW, Wd*Wh*Ww, C
         # merge windows
@@ -570,9 +573,12 @@ class BasicLayer(nn.Module):
         if D_y % self.patch_size[0] != 0:
             y = F.pad(y, (0, 0, 0, 0, 0, self.patch_size[0] - D_y % self.patch_size[0]))
 
-        m = self.avgpool3d((self.patch_size[0],(H_y//H),(W_y//W)), stride=(self.patch_size[0],(H_y//H),(W_y)//W)) # D H W 에 맞게 변형 되야함
+        m = self.avgpool3d(((D_y//D),(H_y//H),(W_y//W)), stride=((D_y//D),(H_y//H),(W_y//W))) # D H W 에 맞게 변형 되야함
         
         y = m(y)
+        
+        y[y<=0.5] = 0
+        y[y>0.5] = 1
         
         # x shape에 맞게 y(segmentation map) shape 변경
         
@@ -839,7 +845,7 @@ class SwinTransformer3D(nn.Module):
         B, C, D, H, W = x.size() # B(batch_size), C(Channel), D(Dimension,Frame), H(Height), W(Width)
 
         x, y = self.humanseg(x)
-        
+
         y = y.squeeze(1) # ex) 16, 1, 15, 56, 56 -> 16, 15, 56, 56
 
         x = self.r2plus1d_backbone(x) # 2D Patch Partition + R(2+1)D Backbone + Reshape
