@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-import torchvision.models as models
+import torchvision.models as models 
 class VGG16(nn.Module):
     def __init__(self):
         super(VGG16, self).__init__()
