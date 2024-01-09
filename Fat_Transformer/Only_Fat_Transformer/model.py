@@ -227,18 +227,16 @@ class ForcedLinear(nn.Module):
         super(ForcedLinear, self).__init__()
         self.weight = nn.Parameter(torch.randn(output_features, input_features))
         self.bias = nn.Parameter(torch.randn(output_features))
-
+        
     def forward(self, x, y):
         batch_size, length, input_size = x.size()
-        output = torch.zeros(batch_size, length, self.bias.size(0), dtype=x.dtype, device=x.device)
-        for i in range(batch_size):
-            for j in range(length):
-                input_data = x[i, j, :]
-                if y[i, j] == 0:
-                    output[i, j, :] = torch.matmul(input_data, self.weight) + self.bias
-                else:
-                    output[i, j, :] = torch.matmul(input_data, self.weight)
-        del input_data
+
+        mask = y.unsqueeze(2).expand(batch_size, length, self.bias.size(0))
+        
+        weighted_input = torch.matmul(x, self.weight.t())
+
+        output = weighted_input + self.bias * (1 - mask)
+
         return output
     
         
