@@ -142,7 +142,6 @@ class HumanSeg(nn.Module):
         return x, out_list2
     
 
-# -- Video_swin_transformer -- #
 class Mlp(nn.Module):
     """ Multilayer perceptron."""
 
@@ -221,28 +220,25 @@ def get_window_size(x_size, window_size, shift_size=None): # x_size = D,H,W / wi
     else:
         return tuple(use_window_size), tuple(use_shift_size)
     
-    
+
 class ForcedLinear(nn.Module):
     def __init__(self, input_features, output_features):
         super(ForcedLinear, self).__init__()
         self.weight = nn.Parameter(torch.randn(output_features, input_features))
         self.bias = nn.Parameter(torch.randn(output_features))
-
+        
     def forward(self, x, y):
         batch_size, length, input_size = x.size()
-        output = torch.zeros(batch_size, length, self.bias.size(0), dtype=x.dtype, device=x.device)
-        for i in range(batch_size):
-            for j in range(length):
-                input_data = x[i, j, :]
-                if y[i, j] == 0:
-                    output[i, j, :] = torch.matmul(input_data, self.weight) + self.bias
-                else:
-                    output[i, j, :] = torch.matmul(input_data, self.weight)
-        del input_data
-        return output
-    
+
+        mask = y.unsqueeze(2).expand(batch_size, length, self.bias.size(0))
         
-# -- Forced Attention 은 여기서 수정해야 하는걸로 보임. -- #
+        weighted_input = torch.matmul(x, self.weight.t())
+
+        output = weighted_input + self.bias * (1 - mask)
+
+        return output
+        
+
 class WindowAttention3D(nn.Module):
     """ Window based multi-head self attention (W-MSA) module with relative position bias.
     It supports both of shifted and non-shifted window.
@@ -329,7 +325,6 @@ class WindowAttention3D(nn.Module):
         x = self.proj_drop(x)
         return x
 
-# -- -- #
 
 class SwinTransformerBlock3D(nn.Module):
     """ Swin Transformer Block.
@@ -386,7 +381,6 @@ class SwinTransformerBlock3D(nn.Module):
         pad_r = (window_size[2] - W % window_size[2]) % window_size[2]
         
         
-        # -- 여기까진 x가 내가 생각하는 x임 -- #
         x = F.pad(x, (0, 0, pad_l, pad_r, pad_t, pad_b, pad_d0, pad_d1))
         
         _, Dp, Hp, Wp, _ = x.shape
