@@ -1275,6 +1275,7 @@ class SwinTransformer3D(nn.Module):
 
     def forward(self, video,text,audio):
         """Forward function."""
+        # 풀샷 테스트 오디오
         text = self.text_model(text)
         text = text.unsqueeze(1)
         audio = rearrange(audio,"B T L C -> B L (T C)")
