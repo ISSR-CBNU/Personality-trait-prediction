@@ -19,7 +19,6 @@ from operator import mul
 from einops import rearrange
 from ast_models import ASTModel
 import logging
-from sepformer import Cross_Sepformer_warpper
 import torch.distributed as dist
 from torchvision.models.video.resnet import VideoResNet, BasicBlock, R2Plus1dStem, Conv2Plus1D
 USE_CUDA = torch.cuda.is_available()
@@ -757,7 +756,6 @@ class SwinTransformer3D(nn.Module):
         self.pos_drop = nn.Dropout(p=drop_rate)
         self.ast_models = ASTModel(input_tdim=audio_split_samples,input_fdim=audio_lenth,audioset_pretrain=True)
         # stochastic depth
-        self.AV_sepformer = Cross_Sepformer_warpper()
         dpr = [x.item() for x in torch.linspace(0, drop_path_rate, sum(depths))]  # stochastic depth decay rule
         self.cross_attention = nn.ModuleList(
             [CrossAttentionLayer(fusion_dim, n_heads, pf_dim, audiodrop,embed_dim,fusionLayer,audio_lenth,audio_dim)for _ in range(depths[fusionLayer-1])] )
@@ -778,7 +776,7 @@ class SwinTransformer3D(nn.Module):
                 drop_path=dpr[sum(depths[:i_layer]):sum(depths[:i_layer + 1])],
                 norm_layer=norm_layer,
                 # downsample=PatchMerging if i_layer<self.num_layers-1 else None, # <-- 마지막 Transformer 이후 output 에서도 Patch Merging 할 수 있도록 주석처리 후 아래 코드 추가
-                downsample=PatchMerging if i_layer != (fusionLayer-1) else None,
+                downsample=PatchMerging,
                 use_checkpoint=use_checkpoint)
             self.layers.append(layer)
         # self.num_features = int(embed_dim * 2**(self.num_layers-1))
@@ -885,12 +883,6 @@ class SwinTransformer3D(nn.Module):
             logger = get_root_logger()
             logger.info(f'load model from: {self.pretrained}')
 
-            # if self.pretrained2d:                                                      # < 이 부분은 mmcv 문제로 주석처리 했습니다.
-            #     # Inflate 2D model into 3D model.
-            #     self.inflate_weights(logger)
-            # else:
-            #     # Directly load 3D model.
-            #    load_checkpoint(self, self.pretrained, strict=False, logger=logger)    # < 여기까지
         elif self.pretrained is None:
             self.apply(_init_weights)
         else:
