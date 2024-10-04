@@ -1,0 +1,201 @@
+[2024-09-28 00:17:38,226]::545033896::DEBUG::1-MAE: 0.8656 ,  1-val_avg_o_loss:0.8535 , 1-val_avg_c_loss:0.8747 , 1-val_avg_e_loss:0.8565 , 1-val_avg_a_loss:0.8968 , 1-val_avg_n_loss:0.8466
+[2024-09-28 00:19:43,573]::3184030073::DEBUG::=============15framesfullshot+Video Vision Transformer Strat!=============
+[2024-09-28 00:20:20,337]::1046574210::DEBUG::1-MAE: 0.8670 ,  1-val_avg_o_loss:0.8692 , 1-val_avg_c_loss:0.8736 , 1-val_avg_e_loss:0.8523 , 1-val_avg_a_loss:0.8965 , 1-val_avg_n_loss:0.8436
+[2024-09-28 22:49:31,993]::3184030073::DEBUG::=============15framesfullshot+Video Vision Transformer Strat!=============
+[2024-09-28 22:49:56,030]::3184030073::DEBUG::=============15framesfullshot+Video Vision Transformer Strat!=============
+[2024-09-28 22:50:10,754]::3184030073::DEBUG::=============15framesfullshot+Video Vision Transformer Strat!=============
+[2024-09-28 22:50:46,201]::1046574210::DEBUG::1-MAE: 0.8669 ,  1-val_avg_o_loss:0.8683 , 1-val_avg_c_loss:0.8740 , 1-val_avg_e_loss:0.8545 , 1-val_avg_a_loss:0.8977 , 1-val_avg_n_loss:0.8398
+[2024-09-30 12:45:21,585]::3184030073::DEBUG::=============15framesfullshot+Video Vision Transformer Strat!=============
+[2024-09-30 12:45:57,102]::22505629::DEBUG::1-MAE: 0.8658 ,  1-val_avg_o_loss:0.8617 , 1-val_avg_c_loss:0.8744 , 1-val_avg_e_loss:0.8562 , 1-val_avg_a_loss:0.8969 , 1-val_avg_n_loss:0.8398
+[2024-09-30 13:12:56,315]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:13:57,522]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:13:57,522]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:14:31,799]::2391032665::DEBUG::1-MAE: 0.8666 ,  1-val_avg_o_loss:0.8686 , 1-val_avg_c_loss:0.8729 , 1-val_avg_e_loss:0.8562 , 1-val_avg_a_loss:0.8982 , 1-val_avg_n_loss:0.8371
+[2024-09-30 13:14:31,799]::2391032665::DEBUG::1-MAE: 0.8666 ,  1-val_avg_o_loss:0.8686 , 1-val_avg_c_loss:0.8729 , 1-val_avg_e_loss:0.8562 , 1-val_avg_a_loss:0.8982 , 1-val_avg_n_loss:0.8371
+[2024-09-30 13:14:54,491]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:14:54,491]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:14:54,491]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:15:28,941]::2391032665::DEBUG::1-MAE: 0.8659 ,  1-val_avg_o_loss:0.8724 , 1-val_avg_c_loss:0.8674 , 1-val_avg_e_loss:0.8551 , 1-val_avg_a_loss:0.8916 , 1-val_avg_n_loss:0.8429
+[2024-09-30 13:15:28,941]::2391032665::DEBUG::1-MAE: 0.8659 ,  1-val_avg_o_loss:0.8724 , 1-val_avg_c_loss:0.8674 , 1-val_avg_e_loss:0.8551 , 1-val_avg_a_loss:0.8916 , 1-val_avg_n_loss:0.8429
+[2024-09-30 13:15:28,941]::2391032665::DEBUG::1-MAE: 0.8659 ,  1-val_avg_o_loss:0.8724 , 1-val_avg_c_loss:0.8674 , 1-val_avg_e_loss:0.8551 , 1-val_avg_a_loss:0.8916 , 1-val_avg_n_loss:0.8429
+[2024-09-30 13:16:27,695]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:17:01,873]::2391032665::DEBUG::1-MAE: 0.8642 ,  1-val_avg_o_loss:0.8673 , 1-val_avg_c_loss:0.8700 , 1-val_avg_e_loss:0.8556 , 1-val_avg_a_loss:0.8878 , 1-val_avg_n_loss:0.8406
+[2024-09-30 13:19:34,698]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:19:34,698]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:20:08,518]::2391032665::DEBUG::1-MAE: 0.8680 ,  1-val_avg_o_loss:0.8696 , 1-val_avg_c_loss:0.8744 , 1-val_avg_e_loss:0.8502 , 1-val_avg_a_loss:0.9026 , 1-val_avg_n_loss:0.8429
+[2024-09-30 13:20:08,518]::2391032665::DEBUG::1-MAE: 0.8680 ,  1-val_avg_o_loss:0.8696 , 1-val_avg_c_loss:0.8744 , 1-val_avg_e_loss:0.8502 , 1-val_avg_a_loss:0.9026 , 1-val_avg_n_loss:0.8429
+[2024-09-30 13:24:18,500]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:24:18,500]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:24:18,500]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:24:51,045]::2077993501::DEBUG::1-MAE: 0.8685 ,  1-val_avg_o_loss:0.8696 , 1-val_avg_c_loss:0.8678 , 1-val_avg_e_loss:0.8537 , 1-val_avg_a_loss:0.9034 , 1-val_avg_n_loss:0.8481
+[2024-09-30 13:24:51,045]::2077993501::DEBUG::1-MAE: 0.8685 ,  1-val_avg_o_loss:0.8696 , 1-val_avg_c_loss:0.8678 , 1-val_avg_e_loss:0.8537 , 1-val_avg_a_loss:0.9034 , 1-val_avg_n_loss:0.8481
+[2024-09-30 13:24:51,045]::2077993501::DEBUG::1-MAE: 0.8685 ,  1-val_avg_o_loss:0.8696 , 1-val_avg_c_loss:0.8678 , 1-val_avg_e_loss:0.8537 , 1-val_avg_a_loss:0.9034 , 1-val_avg_n_loss:0.8481
+[2024-09-30 13:25:02,287]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:25:34,962]::2077993501::DEBUG::1-MAE: 0.8663 ,  1-val_avg_o_loss:0.8618 , 1-val_avg_c_loss:0.8722 , 1-val_avg_e_loss:0.8541 , 1-val_avg_a_loss:0.8998 , 1-val_avg_n_loss:0.8438
+[2024-09-30 13:25:40,294]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:25:40,294]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:26:12,638]::2077993501::DEBUG::1-MAE: 0.8661 ,  1-val_avg_o_loss:0.8714 , 1-val_avg_c_loss:0.8704 , 1-val_avg_e_loss:0.8499 , 1-val_avg_a_loss:0.8907 , 1-val_avg_n_loss:0.8479
+[2024-09-30 13:26:12,638]::2077993501::DEBUG::1-MAE: 0.8661 ,  1-val_avg_o_loss:0.8714 , 1-val_avg_c_loss:0.8704 , 1-val_avg_e_loss:0.8499 , 1-val_avg_a_loss:0.8907 , 1-val_avg_n_loss:0.8479
+[2024-09-30 13:26:53,151]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:26:53,151]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:26:53,151]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:27:25,738]::3733192039::DEBUG::1-MAE: 0.8643 ,  1-val_avg_o_loss:0.8610 , 1-val_avg_c_loss:0.8652 , 1-val_avg_e_loss:0.8460 , 1-val_avg_a_loss:0.9017 , 1-val_avg_n_loss:0.8477
+[2024-09-30 13:27:25,738]::3733192039::DEBUG::1-MAE: 0.8643 ,  1-val_avg_o_loss:0.8610 , 1-val_avg_c_loss:0.8652 , 1-val_avg_e_loss:0.8460 , 1-val_avg_a_loss:0.9017 , 1-val_avg_n_loss:0.8477
+[2024-09-30 13:27:25,738]::3733192039::DEBUG::1-MAE: 0.8643 ,  1-val_avg_o_loss:0.8610 , 1-val_avg_c_loss:0.8652 , 1-val_avg_e_loss:0.8460 , 1-val_avg_a_loss:0.9017 , 1-val_avg_n_loss:0.8477
+[2024-09-30 13:27:29,431]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:27:29,431]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:27:29,431]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:27:29,431]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:28:01,576]::3733192039::DEBUG::1-MAE: 0.8652 ,  1-val_avg_o_loss:0.8666 , 1-val_avg_c_loss:0.8721 , 1-val_avg_e_loss:0.8534 , 1-val_avg_a_loss:0.8908 , 1-val_avg_n_loss:0.8430
+[2024-09-30 13:28:01,576]::3733192039::DEBUG::1-MAE: 0.8652 ,  1-val_avg_o_loss:0.8666 , 1-val_avg_c_loss:0.8721 , 1-val_avg_e_loss:0.8534 , 1-val_avg_a_loss:0.8908 , 1-val_avg_n_loss:0.8430
+[2024-09-30 13:28:01,576]::3733192039::DEBUG::1-MAE: 0.8652 ,  1-val_avg_o_loss:0.8666 , 1-val_avg_c_loss:0.8721 , 1-val_avg_e_loss:0.8534 , 1-val_avg_a_loss:0.8908 , 1-val_avg_n_loss:0.8430
+[2024-09-30 13:28:01,576]::3733192039::DEBUG::1-MAE: 0.8652 ,  1-val_avg_o_loss:0.8666 , 1-val_avg_c_loss:0.8721 , 1-val_avg_e_loss:0.8534 , 1-val_avg_a_loss:0.8908 , 1-val_avg_n_loss:0.8430
+[2024-09-30 13:30:25,156]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:30:52,197]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:30:52,197]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:31:23,397]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:31:49,020]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:31:58,806]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:33:02,314]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:33:35,090]::3733192039::DEBUG::1-MAE: 0.8639 ,  1-val_avg_o_loss:0.8609 , 1-val_avg_c_loss:0.8723 , 1-val_avg_e_loss:0.8531 , 1-val_avg_a_loss:0.8931 , 1-val_avg_n_loss:0.8403
+[2024-09-30 13:33:54,021]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:33:54,021]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:34:26,186]::3733192039::DEBUG::1-MAE: 0.8613 ,  1-val_avg_o_loss:0.8670 , 1-val_avg_c_loss:0.8631 , 1-val_avg_e_loss:0.8494 , 1-val_avg_a_loss:0.8833 , 1-val_avg_n_loss:0.8435
+[2024-09-30 13:34:26,186]::3733192039::DEBUG::1-MAE: 0.8613 ,  1-val_avg_o_loss:0.8670 , 1-val_avg_c_loss:0.8631 , 1-val_avg_e_loss:0.8494 , 1-val_avg_a_loss:0.8833 , 1-val_avg_n_loss:0.8435
+[2024-09-30 13:34:42,295]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:34:42,295]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:34:42,295]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:35:14,909]::3733192039::DEBUG::1-MAE: 0.8654 ,  1-val_avg_o_loss:0.8701 , 1-val_avg_c_loss:0.8720 , 1-val_avg_e_loss:0.8508 , 1-val_avg_a_loss:0.8884 , 1-val_avg_n_loss:0.8455
+[2024-09-30 13:35:14,909]::3733192039::DEBUG::1-MAE: 0.8654 ,  1-val_avg_o_loss:0.8701 , 1-val_avg_c_loss:0.8720 , 1-val_avg_e_loss:0.8508 , 1-val_avg_a_loss:0.8884 , 1-val_avg_n_loss:0.8455
+[2024-09-30 13:35:14,909]::3733192039::DEBUG::1-MAE: 0.8654 ,  1-val_avg_o_loss:0.8701 , 1-val_avg_c_loss:0.8720 , 1-val_avg_e_loss:0.8508 , 1-val_avg_a_loss:0.8884 , 1-val_avg_n_loss:0.8455
+[2024-09-30 13:35:42,342]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:35:42,342]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:35:42,342]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:35:42,342]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:36:14,709]::3733192039::DEBUG::1-MAE: 0.8679 ,  1-val_avg_o_loss:0.8708 , 1-val_avg_c_loss:0.8713 , 1-val_avg_e_loss:0.8546 , 1-val_avg_a_loss:0.8972 , 1-val_avg_n_loss:0.8455
+[2024-09-30 13:36:14,709]::3733192039::DEBUG::1-MAE: 0.8679 ,  1-val_avg_o_loss:0.8708 , 1-val_avg_c_loss:0.8713 , 1-val_avg_e_loss:0.8546 , 1-val_avg_a_loss:0.8972 , 1-val_avg_n_loss:0.8455
+[2024-09-30 13:36:14,709]::3733192039::DEBUG::1-MAE: 0.8679 ,  1-val_avg_o_loss:0.8708 , 1-val_avg_c_loss:0.8713 , 1-val_avg_e_loss:0.8546 , 1-val_avg_a_loss:0.8972 , 1-val_avg_n_loss:0.8455
+[2024-09-30 13:36:14,709]::3733192039::DEBUG::1-MAE: 0.8679 ,  1-val_avg_o_loss:0.8708 , 1-val_avg_c_loss:0.8713 , 1-val_avg_e_loss:0.8546 , 1-val_avg_a_loss:0.8972 , 1-val_avg_n_loss:0.8455
+[2024-09-30 13:36:20,706]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:36:53,198]::3733192039::DEBUG::1-MAE: 0.8629 ,  1-val_avg_o_loss:0.8634 , 1-val_avg_c_loss:0.8658 , 1-val_avg_e_loss:0.8492 , 1-val_avg_a_loss:0.8877 , 1-val_avg_n_loss:0.8482
+[2024-09-30 13:38:02,167]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:38:02,167]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:38:34,321]::1056494765::DEBUG::1-MAE: 0.8663 ,  1-val_avg_o_loss:0.8649 , 1-val_avg_c_loss:0.8676 , 1-val_avg_e_loss:0.8540 , 1-val_avg_a_loss:0.8991 , 1-val_avg_n_loss:0.8457
+[2024-09-30 13:38:34,321]::1056494765::DEBUG::1-MAE: 0.8663 ,  1-val_avg_o_loss:0.8649 , 1-val_avg_c_loss:0.8676 , 1-val_avg_e_loss:0.8540 , 1-val_avg_a_loss:0.8991 , 1-val_avg_n_loss:0.8457
+[2024-09-30 13:38:47,814]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:39:20,389]::1056494765::DEBUG::1-MAE: 0.8665 ,  1-val_avg_o_loss:0.8695 , 1-val_avg_c_loss:0.8661 , 1-val_avg_e_loss:0.8533 , 1-val_avg_a_loss:0.8991 , 1-val_avg_n_loss:0.8444
+[2024-09-30 13:39:24,976]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:39:24,976]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:39:57,166]::1056494765::DEBUG::1-MAE: 0.8627 ,  1-val_avg_o_loss:0.8680 , 1-val_avg_c_loss:0.8681 , 1-val_avg_e_loss:0.8526 , 1-val_avg_a_loss:0.8843 , 1-val_avg_n_loss:0.8407
+[2024-09-30 13:39:57,166]::1056494765::DEBUG::1-MAE: 0.8627 ,  1-val_avg_o_loss:0.8680 , 1-val_avg_c_loss:0.8681 , 1-val_avg_e_loss:0.8526 , 1-val_avg_a_loss:0.8843 , 1-val_avg_n_loss:0.8407
+[2024-09-30 13:40:46,749]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:40:46,749]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:40:46,749]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:41:19,344]::1056494765::DEBUG::1-MAE: 0.8663 ,  1-val_avg_o_loss:0.8689 , 1-val_avg_c_loss:0.8723 , 1-val_avg_e_loss:0.8504 , 1-val_avg_a_loss:0.8960 , 1-val_avg_n_loss:0.8439
+[2024-09-30 13:41:19,344]::1056494765::DEBUG::1-MAE: 0.8663 ,  1-val_avg_o_loss:0.8689 , 1-val_avg_c_loss:0.8723 , 1-val_avg_e_loss:0.8504 , 1-val_avg_a_loss:0.8960 , 1-val_avg_n_loss:0.8439
+[2024-09-30 13:41:19,344]::1056494765::DEBUG::1-MAE: 0.8663 ,  1-val_avg_o_loss:0.8689 , 1-val_avg_c_loss:0.8723 , 1-val_avg_e_loss:0.8504 , 1-val_avg_a_loss:0.8960 , 1-val_avg_n_loss:0.8439
+[2024-09-30 13:41:23,967]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:41:23,967]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:41:23,967]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:41:23,967]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:41:56,124]::1056494765::DEBUG::1-MAE: 0.8667 ,  1-val_avg_o_loss:0.8661 , 1-val_avg_c_loss:0.8668 , 1-val_avg_e_loss:0.8519 , 1-val_avg_a_loss:0.9022 , 1-val_avg_n_loss:0.8466
+[2024-09-30 13:41:56,124]::1056494765::DEBUG::1-MAE: 0.8667 ,  1-val_avg_o_loss:0.8661 , 1-val_avg_c_loss:0.8668 , 1-val_avg_e_loss:0.8519 , 1-val_avg_a_loss:0.9022 , 1-val_avg_n_loss:0.8466
+[2024-09-30 13:41:56,124]::1056494765::DEBUG::1-MAE: 0.8667 ,  1-val_avg_o_loss:0.8661 , 1-val_avg_c_loss:0.8668 , 1-val_avg_e_loss:0.8519 , 1-val_avg_a_loss:0.9022 , 1-val_avg_n_loss:0.8466
+[2024-09-30 13:41:56,124]::1056494765::DEBUG::1-MAE: 0.8667 ,  1-val_avg_o_loss:0.8661 , 1-val_avg_c_loss:0.8668 , 1-val_avg_e_loss:0.8519 , 1-val_avg_a_loss:0.9022 , 1-val_avg_n_loss:0.8466
+[2024-09-30 13:42:08,874]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:42:41,539]::1056494765::DEBUG::1-MAE: 0.8672 ,  1-val_avg_o_loss:0.8737 , 1-val_avg_c_loss:0.8714 , 1-val_avg_e_loss:0.8524 , 1-val_avg_a_loss:0.8967 , 1-val_avg_n_loss:0.8416
+[2024-09-30 13:42:57,847]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:43:30,492]::1056494765::DEBUG::1-MAE: 0.8648 ,  1-val_avg_o_loss:0.8659 , 1-val_avg_c_loss:0.8705 , 1-val_avg_e_loss:0.8517 , 1-val_avg_a_loss:0.8953 , 1-val_avg_n_loss:0.8405
+[2024-09-30 13:43:38,497]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:43:38,497]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:44:10,778]::1008170744::DEBUG::1-MAE: 0.8668 ,  1-val_avg_o_loss:0.8693 , 1-val_avg_c_loss:0.8677 , 1-val_avg_e_loss:0.8487 , 1-val_avg_a_loss:0.9022 , 1-val_avg_n_loss:0.8460
+[2024-09-30 13:44:10,778]::1008170744::DEBUG::1-MAE: 0.8668 ,  1-val_avg_o_loss:0.8693 , 1-val_avg_c_loss:0.8677 , 1-val_avg_e_loss:0.8487 , 1-val_avg_a_loss:0.9022 , 1-val_avg_n_loss:0.8460
+[2024-09-30 13:46:13,291]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:46:13,291]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:46:13,291]::2034709743::DEBUG::=============R2Plus1D+ViVit(15framesfullshot)+ Model Strat!=============
+[2024-09-30 13:46:45,831]::1008170744::DEBUG::1-MAE: 0.8680 ,  1-val_avg_o_loss:0.8690 , 1-val_avg_c_loss:0.8714 , 1-val_avg_e_loss:0.8530 , 1-val_avg_a_loss:0.9040 , 1-val_avg_n_loss:0.8425
+[2024-09-30 13:46:45,831]::1008170744::DEBUG::1-MAE: 0.8680 ,  1-val_avg_o_loss:0.8690 , 1-val_avg_c_loss:0.8714 , 1-val_avg_e_loss:0.8530 , 1-val_avg_a_loss:0.9040 , 1-val_avg_n_loss:0.8425
+[2024-09-30 13:46:45,831]::1008170744::DEBUG::1-MAE: 0.8680 ,  1-val_avg_o_loss:0.8690 , 1-val_avg_c_loss:0.8714 , 1-val_avg_e_loss:0.8530 , 1-val_avg_a_loss:0.9040 , 1-val_avg_n_loss:0.8425
+[2024-09-30 13:51:14,966]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:51:47,642]::2719276924::DEBUG::1-MAE: 0.8611 ,  1-val_avg_o_loss:0.8598 , 1-val_avg_c_loss:0.8604 , 1-val_avg_e_loss:0.8498 , 1-val_avg_a_loss:0.8868 , 1-val_avg_n_loss:0.8485
+[2024-09-30 13:53:43,833]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:53:43,833]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:54:16,101]::2383766681::DEBUG::1-MAE: 0.8632 ,  1-val_avg_o_loss:0.8604 , 1-val_avg_c_loss:0.8715 , 1-val_avg_e_loss:0.8432 , 1-val_avg_a_loss:0.8994 , 1-val_avg_n_loss:0.8419
+[2024-09-30 13:54:16,101]::2383766681::DEBUG::1-MAE: 0.8632 ,  1-val_avg_o_loss:0.8604 , 1-val_avg_c_loss:0.8715 , 1-val_avg_e_loss:0.8432 , 1-val_avg_a_loss:0.8994 , 1-val_avg_n_loss:0.8419
+[2024-09-30 13:54:22,700]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:54:22,700]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:54:22,700]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:54:27,946]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:54:47,491]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:55:29,906]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:55:29,906]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:55:29,906]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:56:52,642]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:57:16,983]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:57:53,515]::918355525::DEBUG::1-MAE: 0.8649 ,  1-val_avg_o_loss:0.8621 , 1-val_avg_c_loss:0.8724 , 1-val_avg_e_loss:0.8533 , 1-val_avg_a_loss:0.8924 , 1-val_avg_n_loss:0.8442
+[2024-09-30 13:58:59,645]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 13:59:35,980]::918355525::DEBUG::1-MAE: 0.8657 ,  1-val_avg_o_loss:0.8671 , 1-val_avg_c_loss:0.8726 , 1-val_avg_e_loss:0.8499 , 1-val_avg_a_loss:0.8971 , 1-val_avg_n_loss:0.8416
+[2024-09-30 14:01:10,943]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 14:01:43,904]::1993806525::DEBUG::1-MAE: 0.8667 ,  1-val_avg_o_loss:0.8663 , 1-val_avg_c_loss:0.8707 , 1-val_avg_e_loss:0.8524 , 1-val_avg_a_loss:0.8976 , 1-val_avg_n_loss:0.8464
+[2024-09-30 14:22:16,085]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 14:23:21,323]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 14:23:46,844]::2028779657::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 15:19:41,366]::577966806::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 15:20:07,928]::577966806::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 15:20:18,370]::577966806::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 15:20:52,746]::3372405783::DEBUG::1-MAE: 0.8667 ,  1-val_avg_o_loss:0.8718 , 1-val_avg_c_loss:0.8693 , 1-val_avg_e_loss:0.8545 , 1-val_avg_a_loss:0.8956 , 1-val_avg_n_loss:0.8421
+[2024-09-30 15:21:00,155]::577966806::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 15:21:03,724]::577966806::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 15:21:38,138]::3372405783::DEBUG::1-MAE: 0.8667 ,  1-val_avg_o_loss:0.8718 , 1-val_avg_c_loss:0.8693 , 1-val_avg_e_loss:0.8545 , 1-val_avg_a_loss:0.8956 , 1-val_avg_n_loss:0.8421
+[2024-09-30 15:21:45,260]::577966806::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 15:22:19,668]::3372405783::DEBUG::1-MAE: 0.8667 ,  1-val_avg_o_loss:0.8718 , 1-val_avg_c_loss:0.8693 , 1-val_avg_e_loss:0.8545 , 1-val_avg_a_loss:0.8956 , 1-val_avg_n_loss:0.8421
+[2024-09-30 15:56:43,570]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 15:57:17,306]::3414253154::DEBUG::1-MAE: 0.8667 ,  1-val_avg_o_loss:0.8718 , 1-val_avg_c_loss:0.8693 , 1-val_avg_e_loss:0.8545 , 1-val_avg_a_loss:0.8956 , 1-val_avg_n_loss:0.8421
+[2024-09-30 16:01:08,917]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 16:01:42,784]::3414253154::DEBUG::1-MAE: 0.8667 ,  1-val_avg_o_loss:0.8718 , 1-val_avg_c_loss:0.8693 , 1-val_avg_e_loss:0.8545 , 1-val_avg_a_loss:0.8956 , 1-val_avg_n_loss:0.8421
+[2024-09-30 16:02:02,663]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 16:02:36,661]::3414253154::DEBUG::1-MAE: 0.8667 ,  1-val_avg_o_loss:0.8718 , 1-val_avg_c_loss:0.8693 , 1-val_avg_e_loss:0.8545 , 1-val_avg_a_loss:0.8956 , 1-val_avg_n_loss:0.8421
+[2024-09-30 16:20:12,877]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 16:20:59,038]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 16:21:26,344]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 16:22:00,322]::2731148546::DEBUG::1-MAE: 0.8667 ,  1-val_avg_loss_o:0.8718 , 1-val_avg_loss_c:0.8693 , 1-val_avg_loss_e:0.8545 , 1-val_avg_loss_a:0.8956 , 1-val_avg_loss_n:0.8421
+[2024-09-30 16:23:04,924]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 16:24:41,041]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-09-30 16:25:14,796]::2731148546::DEBUG::1-MAE: 0.8667 ,  1-val_avg_loss_o:0.8718 , 1-val_avg_loss_c:0.8693 , 1-val_avg_loss_e:0.8545 , 1-val_avg_loss_a:0.8956 , 1-val_avg_loss_n:0.8421
+[2024-10-02 10:48:15,515]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 10:50:02,365]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 10:50:27,207]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 10:50:46,901]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 10:52:46,656]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 10:53:10,785]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 10:54:45,746]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 10:55:46,644]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 10:57:33,899]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 10:59:38,044]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:01:40,571]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:04:24,731]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:09:00,278]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:16:23,052]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:16:34,043]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:16:57,099]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:17:47,360]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:18:29,475]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:18:48,971]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:19:37,974]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:20:40,354]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:20:50,877]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:23:10,511]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:23:45,116]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:25:27,782]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:27:14,859]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:27:48,693]::2731148546::DEBUG::1-MAE: 0.8667 ,  1-val_avg_loss_o:0.8718 , 1-val_avg_loss_c:0.8693 , 1-val_avg_loss_e:0.8545 , 1-val_avg_loss_a:0.8956 , 1-val_avg_loss_n:0.8421
+[2024-10-02 11:28:56,777]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 11:29:30,644]::2731148546::DEBUG::1-MAE: 0.8667 ,  1-val_avg_loss_o:0.8718 , 1-val_avg_loss_c:0.8693 , 1-val_avg_loss_e:0.8545 , 1-val_avg_loss_a:0.8956 , 1-val_avg_loss_n:0.8421
+[2024-10-02 13:27:10,941]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 13:27:44,968]::2731148546::DEBUG::1-MAE: 0.8667 ,  1-val_avg_loss_o:0.8718 , 1-val_avg_loss_c:0.8693 , 1-val_avg_loss_e:0.8545 , 1-val_avg_loss_a:0.8956 , 1-val_avg_loss_n:0.8421
+[2024-10-02 13:27:50,946]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 13:27:50,946]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 13:28:25,156]::2731148546::DEBUG::1-MAE: 0.8667 ,  1-val_avg_loss_o:0.8718 , 1-val_avg_loss_c:0.8693 , 1-val_avg_loss_e:0.8545 , 1-val_avg_loss_a:0.8956 , 1-val_avg_loss_n:0.8421
+[2024-10-02 13:28:25,156]::2731148546::DEBUG::1-MAE: 0.8667 ,  1-val_avg_loss_o:0.8718 , 1-val_avg_loss_c:0.8693 , 1-val_avg_loss_e:0.8545 , 1-val_avg_loss_a:0.8956 , 1-val_avg_loss_n:0.8421
+[2024-10-02 13:29:35,780]::675894754::DEBUG::=============R2Plus1D+ViVit(15framesfullshot) Model Strat!=============
+[2024-10-02 13:30:09,729]::2731148546::DEBUG::1-MAE: 0.8667 ,  1-val_avg_loss_o:0.8718 , 1-val_avg_loss_c:0.8693 , 1-val_avg_loss_e:0.8545 , 1-val_avg_loss_a:0.8956 , 1-val_avg_loss_n:0.8421
