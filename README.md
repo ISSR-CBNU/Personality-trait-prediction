@@ -1,4 +1,5 @@
-# Personality-trait-prediction
+# Overview of Personality Trait Prediction Using Single-Modality or Multi-Modality Approaches
+This repository and project presents the implementation code and performance evaluation results of an OCEAN recognition model utilizing various AI models.
 
 ## Performance Table
 
