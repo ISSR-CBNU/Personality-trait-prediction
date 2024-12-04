@@ -11,7 +11,7 @@ This repository and project presents the implementation code and performance eva
 |Video Vision Transformer     |R(2+1)D(With 4 Layers) Pretrained with ImageNet|2D Patch Partition(Ours)                |0.9143 |Full-Shot                         |224x224            |15   |
 |Video Swin Transformer       |R(2+1)D Pretrained with ImageNet               |Cross-Attention (Main branch: Full-Shot)|0.914  |Query: Full-Shot Key, Value: Audio|224x224|15   |
 |Video Swin Transformer       |R(2+1)D Pretrained with ImageNet               |Cross-Attention (Main branch: Full-Shot)|0.9139 |Query: Audio Key, Value: Full-Shot|224x224|15   |
-|Video Vision Transformer     |R(2+1)D Pretrained with ImageNet               |-                                       |0.9138 |Face                              |Face       : 224x224|15   |
+|Video Vision Transformer     |R(2+1)D Pretrained with ImageNet               |-                                       |0.9138 |Face                              | 224x224|15   |
 |FAt Transformer              |R(2+1)D Pretrained with ImageNet               |-                                       |0.9136 |Full-Shot                         |224x224            |15   |
 |Video Swin Transformer       |R(2+1)D Pretrained with ImageNet               |-                                       |0.9136 |Full-Shot                         |224x224            |15   |
 |Video Vision Transformer     |R(2+1)D(With 4 Layers) Pretrained with ImageNet|2D Patch Partition(Base)                |0.9133 |Full-Shot                         |224x224            |15   |
